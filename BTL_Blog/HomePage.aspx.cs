@@ -19,6 +19,7 @@ namespace BTL_Blog
 
         public void makeDialog(string content)
         {
+            var x = 0;
             Response.Write("<script>alert('" + content + "')</script>");
         }
 
