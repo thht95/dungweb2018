@@ -345,7 +345,7 @@
 
         <div id="bg">
             <div id="box">
-                <h2>CHÀO MỪNG ĐẾN VỚI CLOG</h2>
+                <h2>CHÀO MỪNG ĐẾN VỚI BLOG</h2>
                 <h5>Chia sẻ câu chuyện của bạn cho bạn bè ngay hôm nay, hoàn toàn miễn phí</h5>
                 <%if (Session["Username"] == null || Session["Username"].ToString() == "")
                     {%><h5>Tìm hiểu thêm <br /><br /><span class="glyphicon glyphicon-chevron-down" style="font-size:12px"></span></h5> <%}
