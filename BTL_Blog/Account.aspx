@@ -263,12 +263,12 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Mat khau cu :</label>
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtpass" Enabled="false"></asp:TextBox>
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtpass" Enabled="false" TextMode="Password"></asp:TextBox>
                         
                     </div>
                     <div class="form-group">
                         <label class="control-label">Mat khau moi :</label>
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtpassmoi"></asp:TextBox>
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtpassmoi" TextMode="Password"></asp:TextBox>
                         <%--<asp:CompareValidator ID="comperpass" runat="server" ErrorMessage="Mat khau moi giong mat khau cu vui long nhap lai" ControlToValidate="txtpassmoi" ControlToCompare="txtpass" ValueToCompare="=="></asp:CompareValidator>--%>
                         <%--<asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator" ControlToValidate="txtpassmoi" OnServerValidate="CustomValidator1_ServerValidate" ></asp:CustomValidator>--%>
                     </div>
