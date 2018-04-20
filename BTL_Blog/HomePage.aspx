@@ -355,7 +355,7 @@
         </div>
 
         <%
-    if (Session["Username"] == null || Session["Username"].ToString() == "")    //khi người dùng chưa đăng nhập:
+    if (!(Session["Username"] == null || Session["Username"].ToString() == ""))    //khi người dùng chưa đăng nhập:
             {%>
         <div class="container text-center" style="padding:80px 120px;">
             <h3>BLOG</h3><div class="slideShow">

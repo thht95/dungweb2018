@@ -19,7 +19,6 @@ namespace BTL_Blog
 
         public void makeDialog(string content)
         {
-            var x = 0;
             Response.Write("<script>alert('" + content + "')</script>");
         }
 
@@ -28,7 +27,7 @@ namespace BTL_Blog
             
             if (!IsPostBack)
             {
-                if (Session["Username"] != null)
+                if (!(Session["Username"] != null))
                 {
                     this.userAvatar.ImageUrl = UserAvatarUrl();
                     num = 4;
@@ -48,7 +47,7 @@ namespace BTL_Blog
             using (cmd = new SqlCommand("getRandomUser", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@userName", Session["Username"].ToString());
+                cmd.Parameters.AddWithValue("@userName", "");
                 try
                 {
                     da = new SqlDataAdapter(cmd);
@@ -77,16 +76,17 @@ namespace BTL_Blog
             SqlDataAdapter da;
             try
             {
-                int totalRows = rowCount();
-                if (numofRows > totalRows)
+                this.loadMore.Visible = false;
+                //int totalRows = rowCount();
+                //if (numofRows > totalRows)
+                //{
+                //    this.loadMore.Visible = false;
+                //}
+                using (cmd = new SqlCommand("Select * from tbl_post", con))
                 {
-                    this.loadMore.Visible = false;
-                }
-                using (cmd = new SqlCommand("topPost", con))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@top", numofRows);
-                    cmd.Parameters.AddWithValue("@username",Session["Username"].ToString());
+                    //cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@top", numofRows);
+                    //cmd.Parameters.AddWithValue("@username",Session["Username"].ToString());
                     da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
                     if (dt.Rows.Count > 0)
